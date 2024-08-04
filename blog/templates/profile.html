@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href={% static "profile.css" %}>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src={% static "mani.jpg" %} alt="Profile Picture" class="profile-picture">
+            <h1 class="profile-name">V MANI KUMAR REDDY</h1>
+            <p class="profile-bio">Software Engineer | Tech Enthusiast | Blogger</p>
+        </div>
+        <div class="profile-content">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate software engineer with a love for developing innovative programs that expedite the efficiency and effectiveness of organizational success. Well-versed in technology and writing code to create systems that are reliable and user-friendly. Confident communicator, strategic thinker, and innovative creator to develop software that is customized to meet a company’s organizational needs, highlight their core competencies, and further their success.
+            </p>
+        </div>
+        <div class="profile-links">
+            <h2>Connect with Me</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/mani-v-23b5b7280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/Mani1655B" target="_blank">GitHub</a></li>
+                <li><a href="https://x.com/ManiKum20936876?t=FmQ-ZLcV3ejBth0F1trY8g&s=08" target="_blank">Twitter</a></li>
+                <li><a href="/" target="_blank">Personal Website</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

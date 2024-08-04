@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title</title>
+    <link rel="stylesheet" href={% static "blog.css" %}>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1 class="blog-title">{{post.title}}</h1>
+            <p class="blog-meta">{{post.author}} | {{post.date}}</p>
+        </div>
+        <div class="blog-image">
+            <img src={{post.image.url}} alt="Mountains">
+        </div>
+        <div class="blog-content">
+            <p>
+                {{post.content}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>

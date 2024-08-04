@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home Page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-success text-white">
+        <div class="container d-flex align-items-center justify-content-between">
+            <h1 class="my-3">My Blog</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'contact' %}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'posts' %}">All Posts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <main>
+        <div class="container mt-4">
+            {% for post in posts %}
+            <div class="row mb-4 blog-post">
+                <div class="col-md-4">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <h2>{{ post.title }}</h2>
+                    <p class="meta">Posted on {{ post.date }} by {{ post.author.name }}</p>
+                    <p>{{ post.content|truncatewords:30 }}</p>
+                    <a href="posts/{{post.slug}}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% if more%}
+            <a href="{% url 'posts' %}" class="btn btn-primary">More</a>
+            {% endif %}
+        </div>
+    </main>
+   
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <div class="container">
+            <p>&copy; 2024 My Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
